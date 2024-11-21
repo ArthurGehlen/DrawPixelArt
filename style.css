@@ -1,0 +1,41 @@
+:root {
+    --row: 10;
+    --col: 10;
+    --current_color: #FFF;
+}
+
+#painel button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+.color {
+    background-color: aquamarine;
+}
+
+.no_color {
+    background-color: white;
+}
+
+#painel{
+    display: grid;
+    grid-template-columns: repeat(var(--col), 40px);
+    grid-template-rows: repeat(var(--row), 40px);
+    width: 90%;
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    width: 10%;
+}
+
+#paleta {
+    display: grid;
+    grid-template-columns: repeat(2, 40px);
+    grid-template-rows: repeat(4, 40px);
+    gap: 2px;
+}
