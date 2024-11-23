@@ -13,15 +13,25 @@
     <main>
         <section id="painel"></section>
         <aside id="tools">
-            <label for="linhas">Linhas</label>
-            <input type="number" id="linhas" placeholder="10">
+            <div class="rows_wrapper">
+                <label for="linhas">Linhas</label>
+                <input type="number" id="linhas" placeholder="10">
+            </div>
 
-            <label for="colunas">Colunas</label>
-            <input type="number" id="colunas" placeholder="10">
+            <div class="columns_wrapper">
+                <label for="colunas">Colunas</label>
+                <input type="number" id="colunas" placeholder="10">
+            </div>
 
-            <button onclick="aplicar_configuracoes()">
-                Aplicar
-            </button>
+            <div class="button_wrapper">
+                <button onclick="aplicar_configuracoes()">
+                    Aplicar
+                </button>
+    
+                <button onclick="limpar_painel()">
+                    Limpar
+                </button>    
+            </div>
 
             <section id="paleta"></section>
         </aside>

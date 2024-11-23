@@ -7,14 +7,12 @@ window.onload = function () {
 };
 
 function btn_click(ev) {
-    // ev.srcElement.classList.toggle('color');
     let color = document.documentElement.style.getPropertyValue('--current_color');
     ev.srcElement.style.backgroundColor = color;
 }
 
-function criar_botao(texto) {
+function criar_botao() {
     let botao = document.createElement("button");
-    botao.innerHTML = texto;
     botao.addEventListener('click', btn_click);
 
     let painel = document.getElementById("painel");
@@ -25,8 +23,13 @@ function criar_painel()  {
     let num_elements = rows * columns;
 
     for (let i = 0; i <= num_elements - 1; i++)  {
-        criar_botao(i + 1);
+        criar_botao();
     }
+}
+
+function limpar_painel() {
+    document.getElementById("painel").innerHTML = "";
+    criar_painel();
 }
 
 function aplicar_configuracoes()  {
