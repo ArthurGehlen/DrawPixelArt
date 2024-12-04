@@ -1,5 +1,6 @@
 let rows = 10;
 let columns = 10;
+let cores = ['#25CCF7', '#EAB543', '#000', '#F97F51', '#FFF', '#82589F', '#FC427B', '#55E6C1'];
 
 window.onload = function () {
     criar_painel();
@@ -58,7 +59,6 @@ function aplicar_configuracoes() {
 
 function criar_paleta() {
     let paleta = document.getElementById("paleta");
-    let cores = ['#25CCF7', '#EAB543', '#000', '#F97F51', '#FFF', '#82589F', '#FC427B', '#55E6C1'];
     let num_cores = cores.length;
 
     for (let i = 0; i <= num_cores - 1; i++) {
@@ -75,15 +75,8 @@ function click_paleta(ev) {
 }
 
 function click_load(ev) {
-    console.log("Load");
-
     let codigo = document.getElementById("codigo").value;
-    console.log(codigo);
-
-    console.log(codigo.length);
-
     let dados = codigo.split(",");
-    console.log(dados);
 
     rows = dados[0];
     columns = dados[1];
@@ -92,9 +85,12 @@ function click_load(ev) {
     aplicar_configuracoes();
 
     for(let i = 2; i <= dados.length - 1; i++) {
-        console.log(dados[i]);
         let par = dados[i];
         let valores = par.split(":");
-        console.log(valores);
+        let id = "btn_" + valores[0];
+        let botao = document.getElementById(id);
+        let indice_color = valores[1];
+        let cor = cores[indice_color - 1];
+        botao.style.backgroundColor = cor;
     }
 }
