@@ -4,7 +4,15 @@ let columns = 10;
 window.onload = function () {
     criar_painel();
     criar_paleta();
+    criar_file();
 };
+
+function criar_file() {
+    let btn = document.getElementById("btn_load");
+
+    btn.addEventListener("click", click_load);
+}
+
 
 function btn_click(ev) {
     let color = document.documentElement.style.getPropertyValue('--current_color');
@@ -23,7 +31,7 @@ function criar_botao() {
 function criar_painel() {
     let num_elements = rows * columns;
 
-    for (let i = 0; i <= num_elements - 1; i++)  {
+    for (let i = 0; i <= num_elements - 1; i++) {
         criar_botao();
     }
 }
@@ -33,11 +41,11 @@ function limpar_painel() {
     criar_painel();
 }
 
-function aplicar_configuracoes()  {
+function aplicar_configuracoes() {
     let linhas = document.getElementById("linhas").value;
     let colunas = document.getElementById("colunas").value;
 
-    if (linhas > 0 && columns > 0)  {
+    if (linhas > 0 && columns > 0) {
         document.getElementById("painel").innerHTML = "";
         rows = linhas;
         columns = colunas;
@@ -63,4 +71,8 @@ function criar_paleta() {
 function click_paleta(ev) {
     let color = ev.srcElement.style.backgroundColor;
     document.documentElement.style.setProperty('--current_color', color);
+}
+
+function click_load(ev) {
+    console.log("Load");
 }
