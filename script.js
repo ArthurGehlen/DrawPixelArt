@@ -19,8 +19,9 @@ function btn_click(ev) {
     ev.srcElement.style.backgroundColor = color;
 }
 
-function criar_botao() {
+function criar_botao(id) {
     let botao = document.createElement("button");
+    botao.setAttribute("id", id);
     botao.addEventListener('click', btn_click);
     botao.addEventListener('mouseenter', btn_click);
 
@@ -32,7 +33,7 @@ function criar_painel() {
     let num_elements = rows * columns;
 
     for (let i = 0; i <= num_elements - 1; i++) {
-        criar_botao();
+        criar_botao("btn_" + (i + 1));
     }
 }
 
@@ -75,4 +76,25 @@ function click_paleta(ev) {
 
 function click_load(ev) {
     console.log("Load");
+
+    let codigo = document.getElementById("codigo").value;
+    console.log(codigo);
+
+    console.log(codigo.length);
+
+    let dados = codigo.split(",");
+    console.log(dados);
+
+    rows = dados[0];
+    columns = dados[1];
+    document.getElementById("linhas").value = rows;
+    document.getElementById("colunas").value = columns;
+    aplicar_configuracoes();
+
+    for(let i = 2; i <= dados.length - 1; i++) {
+        console.log(dados[i]);
+        let par = dados[i];
+        let valores = par.split(":");
+        console.log(valores);
+    }
 }
