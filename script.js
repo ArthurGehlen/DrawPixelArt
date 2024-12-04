@@ -14,12 +14,13 @@ function btn_click(ev) {
 function criar_botao() {
     let botao = document.createElement("button");
     botao.addEventListener('click', btn_click);
+    botao.addEventListener('mouseenter', btn_click);
 
     let painel = document.getElementById("painel");
     painel.appendChild(botao);
 }
 
-function criar_painel()  {
+function criar_painel() {
     let num_elements = rows * columns;
 
     for (let i = 0; i <= num_elements - 1; i++)  {
@@ -61,6 +62,5 @@ function criar_paleta() {
 
 function click_paleta(ev) {
     let color = ev.srcElement.style.backgroundColor;
-    console.log(color);
     document.documentElement.style.setProperty('--current_color', color);
 }

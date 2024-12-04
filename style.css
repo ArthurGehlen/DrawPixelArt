@@ -56,10 +56,12 @@ input::-webkit-inner-spin-button {
     border: none;
     border-radius: 20px; 
     width: 45%;
+    background-color: #a59f9f99;
+    transition: background-color .3s ease;
 }
 
 .button_wrapper button:hover {
-    background-color: #bbbbbb66;
+    background-color: #beb4b466;
 }
 
 #painel button {
