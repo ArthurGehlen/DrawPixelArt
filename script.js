@@ -2,18 +2,11 @@ let rows = 10;
 let columns = 10;
 let cores = ['#25CCF7', '#EAB543', '#000', '#F97F51', '#FFF', '#82589F', '#FC427B', '#55E6C1'];
 
-window.onload = function () {
-    criar_painel();
-    criar_paleta();
-    criar_file();
-};
-
 function criar_file() {
     let btn = document.getElementById("btn_load");
 
     btn.addEventListener("click", click_load);
 }
-
 
 function btn_click(ev) {
     let color = document.documentElement.style.getPropertyValue('--current_color');
@@ -84,7 +77,7 @@ function click_load(ev) {
     document.getElementById("colunas").value = columns;
     aplicar_configuracoes();
 
-    for(let i = 2; i <= dados.length - 1; i++) {
+    for (let i = 2; i <= dados.length - 1; i++) {
         let par = dados[i];
         let valores = par.split(":");
         let id = "btn_" + valores[0];
@@ -94,3 +87,7 @@ function click_load(ev) {
         botao.style.backgroundColor = cor;
     }
 }
+
+criar_painel();
+criar_paleta();
+criar_file();

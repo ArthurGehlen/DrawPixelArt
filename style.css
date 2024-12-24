@@ -33,6 +33,7 @@ aside {
 }
 
 aside input {
+    width: 100%;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #a8a8a8a0;
@@ -54,7 +55,7 @@ input::-webkit-inner-spin-button {
     padding: 8px;
     cursor: pointer;
     border: none;
-    border-radius: 20px; 
+    border-radius: 20px;
     width: 45%;
     background-color: #a59f9f99;
     transition: background-color .3s ease;
@@ -82,4 +83,30 @@ input::-webkit-inner-spin-button {
     grid-template-columns: repeat(4, 40px);
     grid-template-rows: repeat(2, 40px);
     gap: 2px;
+}
+
+.file_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file_wrapper textarea {
+    resize: none;
+    padding: .4rem;
+    border-radius: 4px;
+}
+
+.file_wrapper button {
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    background-color: #a59f9f99;
+    transition: background-color .3s ease;
+}
+
+.file_wrapper button:hover {
+    background-color: #beb4b466;
 }
